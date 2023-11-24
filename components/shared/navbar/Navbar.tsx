@@ -12,11 +12,7 @@ const Navbar = () => {
     >
       <div className=" max-w-7xl m-auto flex items-center justify-between h-full px-5">
         <Link className="font-bold" href={"/"}>
-          <Image
-            style={{ width: 200, height: 220, marginTop: 20 }}
-            src={logo}
-            alt="h"
-          />
+          <Image style={{ width: 150 }} src={logo} alt="h" />
         </Link>
         <div className="flex gap-5">
           <NavbarContent />

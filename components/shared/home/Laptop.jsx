@@ -5,7 +5,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, Environment, useGLTF, ContactShadows, OrbitControls } from '@react-three/drei'
 import HeroPage from './HeroPage'
 import Image from "next/image"
-import logo from "../../../assets/logo.png"
+import logo from "../../../assets/logo_software.png"
 
 function Model(props) {
   const group = useRef()
@@ -33,7 +33,7 @@ function Model(props) {
                 {/* <HeroPage /> */}
                 <div style={{width:335,height:220,marginTop:5,display:"flex",justifyContent:"center",alignItems:"center"}}>
                 <Image  style={{marginTop:30}}  src={logo} alt=""/>
-                </div>
+                           </div>
 
               </div>
             </Html>

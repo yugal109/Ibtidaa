@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Laptop from "./Laptop";
 
 const Services = () => {
   return (
@@ -43,7 +44,7 @@ const Services = () => {
               src={"/images/app_dev.png"}
               alt="Website"
               width={400}
-              height={400}
+              height={300}
             />
           </div>
           <div className="flex-1 space-y-10 max-md:space-y-5">

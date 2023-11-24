@@ -34,6 +34,7 @@ const Home = () => {
         </div>
         <div>
           <Laptop />
+          {/* <Sphere /> */}
         </div>
       </div>
       <div className="flex flex-col max-w-4xl m-auto pt-20 h-full md:flex-row max-sm:space-y-10 ">

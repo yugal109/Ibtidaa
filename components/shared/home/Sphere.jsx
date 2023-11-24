@@ -4,7 +4,6 @@ import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 // import stars from "./images/homeLandingImage.png";
 import { OrbitControls } from "@react-three/drei";
-import TopHome from "./TopHome"
 
 function GreatSphere(props) {
   const mesh = useRef();
@@ -52,7 +51,7 @@ function GreatSphere(props) {
   const [size, setSize] = useState(0.03);
   const [color, setColor] = useState("");
   return (
-    <group ref={mesh}>
+    <group style={{backgroundColor:"red"}} ref={mesh}>
       <group ref={mesh1}>
         <mesh position={[2.1, -1, 1]} {...props}>
           <sphereGeometry args={[size, 60, 60]} />
@@ -169,11 +168,11 @@ const Sphere = () => {
   return (
    
       <Canvas
-        style={{ height: 500, width: 500, index: -1,backgroundColor:"black" }}
-        onCreated={(state) => state.gl.setClearColor("black")}
+        style={{ height: 500, width: 500, index: -1,backgroundColor:"#0d0b09" }}
+        onCreated={(state) => state.gl.setClearColor("#0d0b09")}
       >
         <orthographicCamera />
-        <OrbitControls />
+        <OrbitControls enableZoom={false} />
         <ambientLight intensity={0.9} />
         <directionalLight color={color} position={[1, 1, 0.5]} />{" "}
         <GreatSphere />
