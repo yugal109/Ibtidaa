@@ -23,7 +23,7 @@ const NavbarContent = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-          <NavigationMenuContent style={{ zIndex: 1000 }}>
+          <NavigationMenuContent style={{ zIndex: 10000 }}>
             <ul className="grid grid-flow-row gap-3 p-3 w-52">
               <li>
                 <NavigationMenuLink asChild>
