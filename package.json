@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^1.0.6",
+    "@mui/icons-material": "^5.14.18",
+    "@mui/material": "^5.14.18",
     "@netlify/plugin-nextjs": "^4.41.2",
     "@pmndrs/assets": "1.6.0",
     "@pmndrs/branding": "0.0.8",

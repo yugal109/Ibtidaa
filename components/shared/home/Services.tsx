@@ -27,7 +27,7 @@ const Services = () => {
           </div>
           <div>
             <Image
-              src={"/images/website.png"}
+              src={"/images/web_dev.png"}
               alt="Website"
               width={400}
               height={400}
@@ -40,7 +40,7 @@ const Services = () => {
         <div className=" flex justify-between items-center md:gap-32 lg:gap-52 max-md:flex-col ">
           <div className=" max-md:order-2">
             <Image
-              src={"/images/website.png"}
+              src={"/images/app_dev.png"}
               alt="Website"
               width={400}
               height={400}
@@ -79,7 +79,7 @@ const Services = () => {
           </div>
           <div>
             <Image
-              src={"/images/website.png"}
+              src={"/images/digital_marketing.png"}
               alt="Website"
               width={400}
               height={400}
@@ -92,7 +92,7 @@ const Services = () => {
         <div className=" flex justify-between items-center md:gap-32 lg:gap-52 max-md:flex-col ">
           <div className=" max-md:order-2">
             <Image
-              src={"/images/website.png"}
+              src={"/images/ui.png"}
               alt="Website"
               width={400}
               height={400}

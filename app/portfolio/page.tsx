@@ -12,10 +12,11 @@ import "../../styles.css";
 
 // import required modules
 import { Grid, Pagination } from "swiper/modules";
+import BottomBar from "@/components/shared/portfolio/BottomBar";
 
 const page = () => {
   return (
-    <div className="auto">
+    <div className="swiper_outer">
       <Swiper
         slidesPerView={3}
         grid={{
@@ -38,11 +39,6 @@ const page = () => {
         <SwiperSlide>Slide 8</SwiperSlide>
         <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
-      <div className="bottom_bar">
-        <div className="mid_element">Web</div>
-        <div className="mid_element">App</div>
-        <div className="mid_element">Digital Marketing</div>
-      </div>
     </div>
   );
 };
