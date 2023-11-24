@@ -169,7 +169,7 @@ const Sphere = () => {
   return (
    
       <Canvas
-        style={{ height: 500, width: 500, index: -1 }}
+        style={{ height: 500, width: 500, index: -1,backgroundColor:"black" }}
         onCreated={(state) => state.gl.setClearColor("black")}
       >
         <orthographicCamera />
