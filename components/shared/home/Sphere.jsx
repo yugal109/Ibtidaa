@@ -51,7 +51,7 @@ function GreatSphere(props) {
   const [size, setSize] = useState(0.03);
   const [color, setColor] = useState("");
   return (
-    <group style={{backgroundColor:"red"}} ref={mesh}>
+    <group  ref={mesh}>
       <group ref={mesh1}>
         <mesh position={[2.1, -1, 1]} {...props}>
           <sphereGeometry args={[size, 60, 60]} />
@@ -149,7 +149,7 @@ function GreatSphere(props) {
         </mesh>
       </group>
 
-      <mesh {...props}>
+      <mesh onDoubleClick={()=>props.setShow(false)} {...props}>
         <sphereGeometry args={[2, 60, 60]} />
         <meshStandardMaterial
           attach="material"
@@ -163,8 +163,8 @@ function GreatSphere(props) {
   );
 }
 
-const Sphere = () => {
-  const [color, setColor] = useState("red");
+const Sphere = ({setShow}) => {
+  const [color, setColor] = useState("white");
   return (
    
       <Canvas
@@ -173,9 +173,9 @@ const Sphere = () => {
       >
         <orthographicCamera />
         <OrbitControls enableZoom={false} />
-        <ambientLight intensity={0.9} />
-        <directionalLight color={color} position={[1, 1, 0.5]} />{" "}
-        <GreatSphere />
+        <ambientLight color={color} intensity={0.9} />
+        <directionalLight color={"red"} position={[1, 1, 0.5]} />{" "}
+        <GreatSphere setShow={setShow} />
       </Canvas>
   );
 };

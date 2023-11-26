@@ -1,11 +1,13 @@
 'use client'
 import * as THREE from 'three'
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, Environment, useGLTF, ContactShadows, OrbitControls } from '@react-three/drei'
+import Sphere from "./Sphere"
 import HeroPage from './HeroPage'
 import Image from "next/image"
 import logo from "../../../assets/logo_software.png"
+import "../../../laptop.css"
 
 function Model(props) {
   const group = useRef()
@@ -24,43 +26,40 @@ function Model(props) {
     <group  ref={group} {...props} dispose={null}>
       <group rotation-x={-0.425} position={[0, -0.04, 0.41]}>
         <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
-          <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
-          <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
-          <mesh style={{backgroundColor:"red"}} geometry={nodes['Cube008_2'].geometry}>
+          <mesh  material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
+          <mesh onClick={()=>console.log("clicked 29")} material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
+          <mesh geometry={nodes['Cube008_2'].geometry}>
             {/* Drei's HTML component can "hide behind" canvas geometry */}
             <Html className="content"  rotation-x={-Math.PI / 2} position={[0, 0.05, -0.09]} transform occlude>
-              <div style={{width:"100%"}} className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
-                {/* <div style={{zIndex:-100,width:335,height:220,marginTop:5,display:"flex",justifyContent:"center",alignItems:"center"}}> */}
-                <Image  style={{marginTop:30,width:200}}  src={logo} alt=""/>
-                     {/* </div> */}
-
+              <div style={{width:"100%",display:"flex",justifyContent:"center",alignItems:"center"}} className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
+                <Image  style={{marginTop:30,width:500,zIndex:-100}}  src={logo} alt=""/>
               </div>
             </Html>
           </mesh>
         </group>
       </group>
-      <mesh material={materials.keys} geometry={nodes.keyboard.geometry} position={[1.79, 0, 3.45]} />
+      <mesh  material={materials.keys} geometry={nodes.keyboard.geometry} position={[1.79, 0, 3.45]} />
       <group position={[0, -0.1, 3.39]}>
         <mesh material={materials.aluminium} geometry={nodes['Cube002'].geometry} />
-        <mesh material={materials.trackpad} geometry={nodes['Cube002_1'].geometry} />
+        <mesh onClick={()=>props.setShow(true)}  material={materials.trackpad} geometry={nodes['Cube002_1'].geometry} />
       </group>
       <mesh material={materials.touchbar} geometry={nodes.touchbar.geometry} position={[0, -0.03, 1.2]} />
     </group>
   )
 }
 
-export default function Laptop() {
+export default function Laptop({setShow}) {
   return (
     <Canvas style={{width:500,height:500}} camera={{ position: [-5, 0, -15], fov: 55 }}>
       <pointLight position={[10, 10, 10]} intensity={1.5} />
       <Suspense fallback={null}>
         <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]}>
-          <Model />
+          <Model setShow={setShow} />
         </group>
         <Environment preset="city" />
       </Suspense>
       <ContactShadows position={[0, -4.5, 0]} scale={20} blur={2} far={4.5} />
-      <OrbitControls enableRotate={true} enableZoom={false}  />
+      <OrbitControls enableRotate={true} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />
     </Canvas>
   )
 }

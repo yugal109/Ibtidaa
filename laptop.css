@@ -1,0 +1,24 @@
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.content {
+  margin-top: 10px;
+    width: 334px;
+    height: 225px;
+    background: #0d0b09 !important;
+    /* border-radius: 3px; */
+    overflow-y: auto;
+    padding: 0;
+  }
+  
+  .wrapper {
+    padding-right: 10px;
+    width: 690px !important;
+    height: 480px !important;
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
+  

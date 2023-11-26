@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
@@ -5,8 +6,10 @@ import AnimatedNumber from "../AnimateNumber";
 import Link from "next/link";
 import Sphere from "./Sphere";
 import Laptop from "./Laptop";
+import { useState } from "react";
 
 const Home = () => {
+  const [show, setShow] = useState(false);
   return (
     <div className="max-w-7xl m-auto pt-16 max-md:pt-4 h-full px-5">
       <div className="flex flex-col md:flex-row items-center gap-10  ">
@@ -33,8 +36,7 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <Laptop />
-          {/* <Sphere /> */}
+          {show ? <Sphere setShow={setShow} /> : <Laptop setShow={setShow} />}
         </div>
       </div>
       <div className="flex flex-col max-w-4xl m-auto pt-20 h-full md:flex-row max-sm:space-y-10 ">
