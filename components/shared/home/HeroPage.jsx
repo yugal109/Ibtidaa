@@ -82,7 +82,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <div className="relative bg-gray-50">
-      {/* <Popover className="relative bg-white shadow">
+      <Popover className="relative bg-white shadow">
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-4 px-6">
@@ -347,7 +347,7 @@ export default function Example() {
             alt=""
           />
         </div>
-      </main> */}
+      </main>
     </div>
   )
 }

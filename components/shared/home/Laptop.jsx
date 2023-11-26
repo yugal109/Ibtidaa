@@ -31,8 +31,8 @@ function Model(props) {
           <mesh geometry={nodes['Cube008_2'].geometry}>
             {/* Drei's HTML component can "hide behind" canvas geometry */}
             <Html className="content"  rotation-x={-Math.PI / 2} position={[0, 0.05, -0.09]} transform occlude>
-              <div style={{width:"100%",display:"flex",justifyContent:"center",alignItems:"center"}} className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
-                <Image  style={{marginTop:30,width:500,zIndex:-100}}  src={logo} alt=""/>
+              <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
+                <Image  className='img_wrap'   src={logo} alt=""/>
               </div>
             </Html>
           </mesh>
