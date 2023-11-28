@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const NavbarContent = () => {
   return (
-    <NavigationMenu className=" max-md:hidden">
+    <NavigationMenu className=" max-md:hidden flex">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
@@ -23,7 +23,7 @@ const NavbarContent = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-          <NavigationMenuContent style={{ zIndex: 10000 }}>
+          <NavigationMenuContent>
             <ul className="grid grid-flow-row gap-3 p-3 w-52">
               <li>
                 <NavigationMenuLink asChild>
@@ -68,7 +68,7 @@ const NavbarContent = () => {
               <li>
                 <NavigationMenuLink asChild>
                   <Link
-                    href={"/#ui-ux-design"}
+                    href={"#ui-ux-design"}
                     className={
                       "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     }
