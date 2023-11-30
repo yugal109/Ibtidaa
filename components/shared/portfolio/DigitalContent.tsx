@@ -69,7 +69,7 @@ export default function DigitalContent() {
                     {p.name}
                     {/* </Link> */}
                   </CardTitle>
-                  <CardDescription>{p.description}</CardDescription>
+                  {/* <CardDescription>{p.description}</CardDescription> */}
                 </Card>
               </SwiperSlide>
             );

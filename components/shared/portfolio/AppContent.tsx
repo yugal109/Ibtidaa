@@ -32,11 +32,18 @@ const appList = [
     path: "/images/bidesh.png",
     url: "https://play.google.com/store/apps/details?id=com.bideshonline.bideshapp&hl=en&gl=US",
   },
+  {
+    name: "Bidesh Online",
+    description:
+      "Bidesh is a Nepali app offering vital information on overseas work and study opportunities. Tailored for Nepali users, it provides insights into jobs, educational programs, and essential resources, serving as a convenient platform for those aspiring to explore opportunities abroad.",
+    path: "/images/bidesh.png",
+    url: "https://play.google.com/store/apps/details?id=com.bideshonline.bideshapp&hl=en&gl=US",
+  },
 ];
 export default function WebContent() {
   return (
-    <section className=" pt-10 pb-[2rem] min-h-screen ">
-      <div className="lg:mx-auto max-w-7xl ">
+    <section className=" pt-10 pb-[2rem] ">
+      <div className="lg:mx-auto max-w-5xl ">
         <Swiper
           modules={[Grid, Pagination, Navigation]}
           slidesPerView={3}
@@ -61,11 +68,11 @@ export default function WebContent() {
         >
           {appList.map((p) => {
             return (
-              <SwiperSlide key={p.name} className="max-lg:px-5 w-screen ">
+              <SwiperSlide key={p.name} className="max-lg:px-5 w-screen">
                 <Card className="p-5">
                   <CardHeader className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
                     <Image
-                      className="scale-1 hover:scale-[1.1] duration-300 object-contain"
+                      className="object-contain"
                       src={p.path}
                       alt=""
                       height={200}
@@ -77,7 +84,7 @@ export default function WebContent() {
                       {p.name}
                     </Link>
                   </CardTitle>
-                  <CardDescription>{p.description}</CardDescription>
+                  {/* <CardDescription>{p.description}</CardDescription> */}
                 </Card>
               </SwiperSlide>
             );

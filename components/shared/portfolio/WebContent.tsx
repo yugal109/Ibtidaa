@@ -32,11 +32,11 @@ const webList = [
     url: "https://rudratrek.com/",
   },
   {
-    name: "Rojaai",
+    name: "Rozai",
     description:
-      "Rojaai is a prominent e-commerce platform based in Nepal, offering a wide range of products for online shoppers. With a user-friendly interface, Rojaai enables customers to explore diverse categories, make secure online transactions, and enjoy the convenience of doorstep deliveries. Known for its commitment to quality service, Rojaai has become a go-to destination for residents in Nepal seeking a seamless and reliable online shopping experience",
-    path: "/images/rojaai.png",
-    url: "https://rojaai.com/",
+      "Rozai is a prominent e-commerce platform based in Nepal, offering a wide range of products for online shoppers. With a user-friendly interface, Rojaai enables customers to explore diverse categories, make secure online transactions, and enjoy the convenience of doorstep deliveries. Known for its commitment to quality service, Rojaai has become a go-to destination for residents in Nepal seeking a seamless and reliable online shopping experience",
+    path: "/images/rozai.png",
+    url: "https://rozai.com/",
   },
   {
     name: "Ssoche",
@@ -44,6 +44,20 @@ const webList = [
       "SSOCHE is the website for the Student's Society of Chemical Engineers at Pulchowk Campus. It provides information on academic events, workshops, and social activities for chemical engineering students. The platform fosters community engagement and serves as a hub for resources and announcements.",
     path: "/images/ssoche.png",
     url: "https://ssoche.pcampus.edu.np/",
+  },
+  {
+    name: "Bisworupi",
+    description:
+      "SSOCHE is the website for the Student's Society of Chemical Engineers at Pulchowk Campus. It provides information on academic events, workshops, and social activities for chemical engineering students. The platform fosters community engagement and serves as a hub for resources and announcements.",
+    path: "/images/bishworupi.png",
+    url: "https://ssoche.pcampus.edu.np/",
+  },
+  {
+    name: "Bidesh Online",
+    description:
+      "Bidesh is a Nepali app offering vital information on overseas work and study opportunities. Tailored for Nepali users, it provides insights into jobs, educational programs, and essential resources, serving as a convenient platform for those aspiring to explore opportunities abroad.",
+    path: "/images/bidesh.png",
+    url: "https://play.google.com/store/apps/details?id=com.bideshonline.bideshapp&hl=en&gl=US",
   },
 ];
 export default function WebContent() {
@@ -68,7 +82,7 @@ export default function WebContent() {
           navigation
           grid={{
             rows: 2,
-            fill: "row",
+            // fill: "row",
           }}
           className="gridCol max-lg:w-screen "
         >
@@ -78,7 +92,7 @@ export default function WebContent() {
                 <Card className="p-5">
                   <CardHeader className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
                     <Image
-                      className="scale-1 hover:scale-[1.1] duration-300 object-contain"
+                      className="object-contain"
                       src={p.path}
                       alt=""
                       height={200}
@@ -90,7 +104,7 @@ export default function WebContent() {
                       {p.name}
                     </Link>
                   </CardTitle>
-                  <CardDescription>{p.description}</CardDescription>
+                  {/* <CardDescription>{p.description}</CardDescription> */}
                 </Card>
               </SwiperSlide>
             );

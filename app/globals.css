@@ -35,7 +35,7 @@
 
   .gridCol .swiper-wrapper {
     flex-direction: row !important;
-    justify-content: center;
+    /* justify-content: center; */
   }
 
   .gridCol .swiper-slide {
