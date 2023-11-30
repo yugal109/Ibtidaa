@@ -1,44 +1,31 @@
-"use client";
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/grid";
-import "swiper/css/pagination";
-
-import "../../styles.css";
-
-// import required modules
-import { Grid, Pagination } from "swiper/modules";
-import BottomBar from "@/components/shared/portfolio/BottomBar";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import WebContent from "@/components/shared/portfolio/WebContent";
+import AppContent from "@/components/shared/portfolio/AppContent";
+import DigitalContent from "@/components/shared/portfolio/DigitalContent";
 
 const page = () => {
   return (
-    <div className="swiper_outer">
-      <Swiper
-        slidesPerView={3}
-        grid={{
-          rows: 2,
-        }}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Grid, Pagination]}
-        className="mySwiper"
+    <div className=" max-w-7xl m-auto pt-20">
+      <h1 className="text-4xl text-center py-10">Our Projects</h1>
+      <Tabs
+        defaultValue="web"
+        className=" flex flex-col items-center max-w-7xl m-auto"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
+        <TabsList>
+          <TabsTrigger value="web">Website</TabsTrigger>
+          <TabsTrigger value="app">Mobile App</TabsTrigger>
+          <TabsTrigger value="digital">Digital Marketing</TabsTrigger>
+        </TabsList>
+        <TabsContent value="web">
+          <WebContent />
+        </TabsContent>
+        <TabsContent value="app">
+          <AppContent />
+        </TabsContent>
+        <TabsContent value="digital">
+          <DigitalContent />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };

@@ -11,15 +11,15 @@ import { useState } from "react";
 const Home = () => {
   const [show, setShow] = useState(false);
   return (
-    <div className="max-w-7xl m-auto pt-16 max-md:pt-4 h-full px-5">
-      <div className="flex flex-col md:flex-row items-center gap-10  ">
-        <div className="flex-1 space-y-10 max-md:space-y-5">
-          <div className=" gap-2">
-            <h1 className=" text-7xl max-md:text-5xl">Hey,</h1>
-            <h1 className=" text-7xl max-md:text-5xl">There !</h1>
+    <div className="max-w-7xl m-auto pt-16 max-md:pt-8 h-full px-5 ">
+      <div className="flex flex-col md:flex-row items-center   ">
+        <div className="flex-1 space-y-10 max-md:space-y-8 ">
+          <div className=" gap-2 ">
+            <h1 className=" text-7xl  ">Hey,</h1>
+            <h1 className=" text-7xl  ">There !</h1>
           </div>
           <div>
-            <p className="text-xl tracking-wider max-md:text-lg">
+            <p className="text-xl tracking-wider ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
               in debitis minus, dolorem nobis nulla? Sapiente eos unde molestias
               nihil velit sunt laudantium qui vero. Deleniti veritatis quidem
