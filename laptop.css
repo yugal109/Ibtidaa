@@ -27,5 +27,7 @@
   .img_wrap{
     height: 225px;
     width: 250px;
+    user-drag: none;
+    user-select: none; 
   }
   

@@ -20,10 +20,10 @@ const Home = () => {
           </div>
           <div>
             <p className="text-xl tracking-wider ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              in debitis minus, dolorem nobis nulla? Sapiente eos unde molestias
-              nihil velit sunt laudantium qui vero. Deleniti veritatis quidem
-              exercitationem quibusdam.
+              Welcome to Ibtidaa Softwares, your trusted software solution
+              partner nestled in the heart of Kathmandu, Nepal. We blend
+              innovation with expertise, offering bespoke services to propel
+              your business into the digital forefront.
             </p>
           </div>
           <div className="flex gap-6">

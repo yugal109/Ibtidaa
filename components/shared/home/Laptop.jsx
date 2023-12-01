@@ -32,7 +32,7 @@ function Model(props) {
             {/* Drei's HTML component can "hide behind" canvas geometry */}
             <Html className="content"  rotation-x={-Math.PI / 2} position={[0, 0.05, -0.09]} transform occlude>
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
-                <Image  className='img_wrap'   src={logo} alt=""/>
+                <Image  className='img_wrap' draggable={false}   src={logo} alt=""/>
               </div>
             </Html>
           </mesh>
@@ -50,7 +50,7 @@ function Model(props) {
 
 export default function Laptop({setShow}) {
   return (
-    <Canvas style={{width:500,height:500}} camera={{ position: [-5, 0, -15], fov: 55 }}>
+    <Canvas style={{width:600,height:500}} camera={{ position: [-5, 0, -15], fov: 55 }}>
       <pointLight position={[10, 10, 10]} intensity={1.5} />
       <Suspense fallback={null}>
         <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]}>
