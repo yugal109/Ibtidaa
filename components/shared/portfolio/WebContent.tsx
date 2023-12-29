@@ -42,7 +42,7 @@ const webList = [
     name: "Ssoche",
     description:
       "SSOCHE is the website for the Student's Society of Chemical Engineers at Pulchowk Campus. It provides information on academic events, workshops, and social activities for chemical engineering students. The platform fosters community engagement and serves as a hub for resources and announcements.",
-    path: "/images/ssoche.png",
+    path: "/images/bitfly.png",
     url: "https://ssoche.pcampus.edu.np/",
   },
   {
@@ -57,7 +57,7 @@ const webList = [
     description:
       "Bidesh is a Nepali app offering vital information on overseas work and study opportunities. Tailored for Nepali users, it provides insights into jobs, educational programs, and essential resources, serving as a convenient platform for those aspiring to explore opportunities abroad.",
     path: "/images/bidesh.png",
-    url: "https://play.google.com/store/apps/details?id=com.bideshonline.bideshapp&hl=en&gl=US",
+    url: "https://bidesh.online/",
   },
 ];
 export default function WebContent() {
@@ -92,7 +92,7 @@ export default function WebContent() {
                 <Card className="p-5">
                   <CardHeader className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
                     <Image
-                      className="object-contain"
+                      className="scale-1 hover:scale-[1.1] duration-300 object-contain"
                       src={p.path}
                       alt=""
                       height={200}

@@ -43,7 +43,7 @@
     font-size: 18px;
 
     /* Change column as you want by calc 3 <== examble */
-    height: calc((100% - 30px) / 3) !important;
+    /* height: calc((100% - 30px) / 3) !important; */
   }
 
   .gridCol .swiper-button-prev,

@@ -9,30 +9,23 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Grid } from "swiper/modules";
 import Image from "next/image";
 
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import Link from "next/link";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 const appList = [
   {
     name: "Salaka Farm",
     description:
       "Salaka Farm, a pioneering digital marketing channel in Nepal, focuses on elevating agricultural businesses. Specializing in online advertising and social media campaigns, it aims to empower local farmers by enhancing their visibility and connecting them with potential buyers through modern marketing strategies.",
-    path: "/images/salakafarm.png",
+    path: "/images/website.png",
   },
 ];
 export default function DigitalContent() {
   return (
-    <section className=" pt-10 pb-[2rem] min-h-screen ">
+    <section className=" pt-10 pb-[2rem] ">
       <div className="lg:mx-auto max-w-7xl ">
         <Swiper
           modules={[Grid, Pagination, Navigation]}
           slidesPerView={3}
-          spaceBetween={10}
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -53,8 +46,8 @@ export default function DigitalContent() {
         >
           {appList.map((p) => {
             return (
-              <SwiperSlide key={p.name} className="max-lg:px-5 w-screen ">
-                <Card className="p-5">
+              <SwiperSlide key={p.name} className="max-lg:px-5 w-screen mt-10 ">
+                <Card className="p-5 w-[310px]">
                   <CardHeader className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
                     <Image
                       className="scale-1 hover:scale-[1.1] duration-300 object-contain"

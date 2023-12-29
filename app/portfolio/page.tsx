@@ -5,7 +5,7 @@ import DigitalContent from "@/components/shared/portfolio/DigitalContent";
 
 const page = () => {
   return (
-    <div className=" max-w-7xl m-auto pt-20">
+    <div className=" max-w-7xl m-auto pt-20 min-h-screen">
       <h1 className="text-4xl text-center py-10">Our Projects</h1>
       <Tabs
         defaultValue="web"
