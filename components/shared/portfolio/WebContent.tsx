@@ -16,6 +16,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
+import { BackgroundGradient } from "@/components/ui/aceternity/background-gradient";
 
 const webList = [
   {
@@ -23,7 +24,7 @@ const webList = [
     description:
       "NepTunes is Nepal's inaugural online music streaming platform, providing a diverse selection of Nepali and international music. As the country's first service of its kind, NepTunes offers a user-friendly interface, allowing music enthusiasts to explore genres and create personalized playlists for a seamless and enjoyable listening experience.",
     path: "/images/neptunes.png",
-    url: "https://neptunes.com",
+    url: "https://neptunes.app/",
   },
   {
     name: "Rudra Trek",
@@ -36,7 +37,7 @@ const webList = [
     description:
       "Rozai is a prominent e-commerce platform based in Nepal, offering a wide range of products for online shoppers. With a user-friendly interface, Rojaai enables customers to explore diverse categories, make secure online transactions, and enjoy the convenience of doorstep deliveries. Known for its commitment to quality service, Rojaai has become a go-to destination for residents in Nepal seeking a seamless and reliable online shopping experience",
     path: "/images/rozai.png",
-    url: "https://rozai.com/",
+    url: "https://rozai.com.np/",
   },
   {
     name: "Ssoche",
@@ -62,55 +63,29 @@ const webList = [
 ];
 export default function WebContent() {
   return (
-    <section className=" pt-10 pb-[2rem] ">
-      <div className="lg:mx-auto max-w-5xl ">
-        <Swiper
-          modules={[Grid, Pagination, Navigation]}
-          slidesPerView={3}
-          spaceBetween={10}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            600: {
-              slidesPerView: 2,
-            },
-            1000: {
-              slidesPerView: 3,
-            },
-          }}
-          navigation
-          grid={{
-            rows: 2,
-            // fill: "row",
-          }}
-          className="gridCol max-lg:w-screen "
-        >
-          {webList.map((p) => {
-            return (
-              <SwiperSlide key={p.name} className="max-lg:px-5 w-screen">
-                <Card className="p-5">
-                  <CardHeader className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
-                    <Image
-                      className="scale-1 hover:scale-[1.1] duration-300 object-contain"
-                      src={p.path}
-                      alt=""
-                      height={200}
-                      width={300}
-                    />
-                  </CardHeader>
-                  <CardTitle className="text-center p-3 hover:underline cursor-pointer">
-                    <Link href={p.url} target="_blank">
-                      {p.name}
-                    </Link>
-                  </CardTitle>
-                  {/* <CardDescription>{p.description}</CardDescription> */}
-                </Card>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+    <div className=" max-w-5xl">
+      <div className=" grid xl:grid-cols-3 md:grid-cols-2 gap-5 grid-cols-1 py-10 ">
+        {webList.map((p) => {
+          return (
+            <Link href={p.url} key={p.name} className="group" target="_blank">
+              <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
+                <div className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
+                  <Image
+                    className="scale-1 group-hover:scale-[1.1] duration-300 object-contain"
+                    src={p.path}
+                    alt=""
+                    height={200}
+                    width={300}
+                  />
+                </div>
+                <div className="text-center p-3 group-hover:underline cursor-pointer">
+                  <p className="text-xl font-bold">{p.name}</p>
+                </div>
+              </BackgroundGradient>
+            </Link>
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }

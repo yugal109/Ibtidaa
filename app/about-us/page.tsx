@@ -1,97 +1,116 @@
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { AboutIconCard } from "@/components/shared/about/AboutIconCard";
+import React from "react";
 
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+const tech = [
+  {
+    title: "Bootstrap",
+    icon: "bootstrap",
+  },
+  {
+    title: "C Language",
+    icon: "c",
+  },
+  {
+    title: "CSS",
+    icon: "css",
+  },
+  {
+    title: "Django",
+    icon: "django",
+  },
+  {
+    title: "Express",
+    icon: "express",
+  },
+  {
+    title: "Firebase",
+    icon: "firebase",
+  },
+  {
+    title: "Flutter",
+    icon: "flutter",
+  },
+  {
+    title: "Git",
+    icon: "git",
+  },
+  {
+    title: "Heroku",
+    icon: "heroku",
+  },
+  {
+    title: "Html",
+    icon: "html",
+  },
+  {
+    title: "Javascript",
+    icon: "javascript",
+  },
+  {
+    title: "MongoDB",
+    icon: "mongodb",
+  },
+  {
+    title: "Node.js",
+    icon: "nodejs",
+  },
+  {
+    title: "Postman",
+    icon: "postman",
+  },
+  {
+    title: "React Native",
+    icon: "react",
+  },
+  {
+    title: "React",
+    icon: "react",
+  },
+  {
+    title: "Redux",
+    icon: "redux",
+  },
+  {
+    title: "Saas",
+    icon: "saas",
+  },
+  {
+    title: "Tailwind",
+    icon: "tailwind",
+  },
+  {
+    title: "Typescript",
+    icon: "typescript",
+  },
+];
 
-const page = () => {
+const AboutPage = () => {
   return (
-    <div className=" max-w-7xl m-auto py-20 h-full">
-      <div className=" mt-16 max-md:mt-10">
-        <h1 className="text-center text-5xl">About Us</h1>
-        <div className=" max-w-2xl m-auto p-5">
-          <p className="text-xl text-center">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
-            nesciunt exercitationem ipsa cum quaerat ipsam, vitae eos! Minima ut
-            molestias perferendis quod maiores inventore ipsa! Amet nisi error
-            at sunt?
-          </p>
-        </div>
-
-        <h1 className="text-center text-5xl mt-10">Our Team</h1>
-
-        <div className="grid grid-cols-3 max-md:grid-cols-2 px-5 max-sm:grid-cols-1  gap-4 mt-8">
-          <Card className="space-y-3 flex flex-col items-center py-10 ">
-            <Avatar className=" h-40 w-40 ">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>AS</AvatarFallback>
-            </Avatar>
-            <CardHeader className="flex items-center">
-              <CardTitle className="text-3xl">Aagat Sharma</CardTitle>
-              <CardDescription className="text-xl">
-                Web Developer
-              </CardDescription>
-              <CardDescription className="text-xl">
-                App Developer
-              </CardDescription>
-            </CardHeader>
-            <CardFooter className=" gap-6">
-              <Facebook />
-              <Instagram />
-              <Linkedin />
-            </CardFooter>
-          </Card>
-
-          <Card className="space-y-3 flex flex-col items-center py-10 ">
-            <Avatar className=" h-40 w-40 ">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>AS</AvatarFallback>
-            </Avatar>
-            <CardHeader className="flex items-center">
-              <CardTitle className="text-3xl">Aagat Sharma</CardTitle>
-              <CardDescription className="text-xl">
-                Web Developer
-              </CardDescription>
-              <CardDescription className="text-xl">
-                App Developer
-              </CardDescription>
-            </CardHeader>
-            <CardFooter className=" gap-6">
-              <Facebook />
-              <Instagram />
-              <Linkedin />
-            </CardFooter>
-          </Card>
-
-          <Card className="space-y-3 flex flex-col items-center py-10 ">
-            <Avatar className=" h-40 w-40 ">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>AS</AvatarFallback>
-            </Avatar>
-            <CardHeader className="flex items-center">
-              <CardTitle className="text-3xl">Aagat Sharma</CardTitle>
-              <CardDescription className="text-xl">
-                Web Developer
-              </CardDescription>
-              <CardDescription className="text-xl">
-                App Developer
-              </CardDescription>
-            </CardHeader>
-            <CardFooter className=" gap-6">
-              <Facebook />
-              <Instagram />
-              <Linkedin />
-            </CardFooter>
-          </Card>
-        </div>
+    <div className="pt-20 max-w-7xl m-auto p-5">
+      <div className="py-10 flex flex-col gap-5">
+        <h1 className="md:text-5xl text-4xl text-primary text-center">
+          A bit About Us
+        </h1>
+        <h2 className="md:text-2xl text-xl text-white ">
+          {`We're a team of web developer and Mobile App Developer with
+          experience in designing new features from ideation to production,
+          implementation of wireframes and design flows into high performance
+          software applications. We take into consideration the user experience
+          while writing reusable and efficient code.`}
+        </h2>
+      </div>
+      <div className="pt-10 flex flex-col gap-5">
+        <h1 className="md:text-5xl text-4xl text-primary text-center">
+          Technologies and Tools
+        </h1>
+      </div>
+      <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-1 ">
+        {tech.map((tech) => (
+          <AboutIconCard key={tech.title} title={tech.title} icon={tech.icon} />
+        ))}
       </div>
     </div>
   );
 };
 
-export default page;
+export default AboutPage;

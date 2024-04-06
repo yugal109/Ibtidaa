@@ -10,6 +10,8 @@ import { Navigation, Pagination, Grid } from "swiper/modules";
 import Image from "next/image";
 
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { BackgroundGradient } from "@/components/ui/aceternity/background-gradient";
+import { Link } from "lucide-react";
 
 const appList = [
   {
@@ -21,54 +23,32 @@ const appList = [
 ];
 export default function DigitalContent() {
   return (
-    <section className=" pt-10 pb-[2rem] ">
-      <div className="lg:mx-auto max-w-7xl ">
-        <Swiper
-          modules={[Grid, Pagination, Navigation]}
-          slidesPerView={3}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            600: {
-              slidesPerView: 2,
-            },
-            1000: {
-              slidesPerView: 3,
-            },
-          }}
-          navigation
-          grid={{
-            rows: 2,
-            fill: "row",
-          }}
-          className="gridCol max-lg:w-screen "
-        >
-          {appList.map((p) => {
-            return (
-              <SwiperSlide key={p.name} className="max-lg:px-5 w-screen mt-10 ">
-                <Card className="p-5 w-[310px]">
-                  <CardHeader className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
-                    <Image
-                      className="scale-1 hover:scale-[1.1] duration-300 object-contain"
-                      src={p.path}
-                      alt=""
-                      height={200}
-                      width={300}
-                    />
-                  </CardHeader>
-                  <CardTitle className="text-center p-3 hover:underline cursor-pointer">
-                    {/* <Link href={p.url} target="_blank"> */}
-                    {p.name}
-                    {/* </Link> */}
-                  </CardTitle>
-                  {/* <CardDescription>{p.description}</CardDescription> */}
-                </Card>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+    <div className=" max-w-5xl">
+      <div className=" py-10 ">
+        {appList.map((p) => {
+          return (
+            <div key={p.name} className="group">
+              <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
+                <div className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
+                  <Image
+                    className="scale-1 group-hover:scale-[1.1] duration-300 object-contain"
+                    src={p.path}
+                    alt=""
+                    height={200}
+                    width={300}
+                  />
+                </div>
+                <div className="text-center p-3 group-hover:underline cursor-pointer">
+                  <p className="text-xl font-bold">{p.name}</p>
+                </div>
+                <div className="text-center ">
+                  <p className="text-base">{p.description}</p>
+                </div>
+              </BackgroundGradient>
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }

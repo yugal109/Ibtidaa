@@ -7,6 +7,32 @@ import Link from "next/link";
 import Sphere from "./Sphere";
 import Laptop from "./Laptop";
 import { useState } from "react";
+import {
+  TypewriterEffect,
+  TypewriterEffectSmooth,
+} from "@/components/ui/aceternity/typewriter-effect";
+
+const words = [
+  {
+    text: "Hello",
+    className: "text-white",
+  },
+  {
+    text: "from,",
+    className: "text-white ",
+  },
+];
+
+const words2 = [
+  {
+    text: "Ibtidaa",
+    className: "text-primary ",
+  },
+  {
+    text: "Softwares.",
+    className: "text-primary ",
+  },
+];
 
 const Home = () => {
   const [show, setShow] = useState(false);
@@ -15,8 +41,10 @@ const Home = () => {
       <div className="flex flex-col md:flex-row items-center   ">
         <div className="flex-1 space-y-10 max-md:space-y-8 ">
           <div className=" gap-2 ">
-            <h1 className=" text-7xl  ">Hey,</h1>
-            <h1 className=" text-7xl  ">There !</h1>
+            {/* <h1 className=" text-7xl  ">Hey,</h1>
+            <h1 className=" text-7xl  ">There !</h1> */}
+            <TypewriterEffect words={words} />
+            <TypewriterEffectSmooth words={words2} />
           </div>
           <div>
             <p className="text-xl tracking-wider ">
@@ -39,7 +67,7 @@ const Home = () => {
           {show ? <Sphere setShow={setShow} /> : <Laptop setShow={setShow} />}
         </div>
       </div>
-      <div className="flex flex-col max-w-4xl m-auto pt-20 h-full md:flex-row max-sm:space-y-10 ">
+      <div className="grid md:grid-cols-2 max-w-4xl m-auto pt-20 h-full max-sm:gap-5 ">
         <div className="grid grid-flow-col h-28 items-center gap-x-4  ">
           <div className="flex flex-col items-center">
             <div className="flex">
@@ -51,8 +79,8 @@ const Home = () => {
           <Separator orientation="vertical" />
           <div>
             <p className="text-xl tracking-wide ">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis
-              quod fugit cumque,
+              {`We've had the pleasure of working with a diverse range of clients,
+              each with unique needs and challenges`}
             </p>
           </div>
         </div>
@@ -67,8 +95,8 @@ const Home = () => {
           </div>
           <Separator orientation="vertical" className=" ml-3.5" />
           <p className="text-xl tracking-wide  ">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis quod
-            fugit cumque,
+            From small businesses to multinational corporations, our client
+            portfolio spans a wide spectrum.
           </p>
         </div>
       </div>
