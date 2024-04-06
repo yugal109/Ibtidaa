@@ -64,7 +64,7 @@ const Home = () => {
           </div>
         </div>
         <div>
-          {show ? <Sphere setShow={setShow} /> : <Laptop setShow={setShow} />}
+          {/* {show ? <Sphere setShow={setShow} /> : <Laptop setShow={setShow} />} */}
         </div>
       </div>
       <div className="grid md:grid-cols-2 max-w-4xl m-auto pt-20 h-full max-sm:gap-5 ">
