@@ -6,6 +6,12 @@ import Script from "next/script";
 import Head from "next/head";
 import { Montserrat } from "next/font/google";
 
+import dynamic from "next/dynamic";
+
+const NextProgress = dynamic(() => import("@/components/shared/Loader"), {
+  ssr: false,
+});
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,6 +28,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <Navbar />
+        <NextProgress />
         <div>{children}</div>
         <Footer />
       </body>

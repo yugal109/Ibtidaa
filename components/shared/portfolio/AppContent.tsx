@@ -16,6 +16,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
+import { BackgroundGradient } from "@/components/ui/aceternity/background-gradient";
 
 const appList = [
   {
@@ -32,57 +33,42 @@ const appList = [
     path: "/images/bidesh.png",
     url: "https://play.google.com/store/apps/details?id=com.bideshonline.bideshapp&hl=en&gl=US",
   },
+  {
+    name: "Eatonline ",
+    path: "/images/eatonline.png",
+    url: "https://play.google.com/store/apps/details?id=be.nepasoft.eatonline_terminal_dashboard",
+  },
+  {
+    name: "Neptunes",
+    path: "/images/neptunes.png",
+    url: "https://play.google.com/store/apps/details?id=com.neptunes.neptunes",
+  },
 ];
-export default function WebContent() {
+export default function AppContent() {
   return (
-    <section className=" pt-10 pb-[2rem] ">
-      <div className="lg:mx-auto max-w-7xl ">
-        <Swiper
-          modules={[Grid, Pagination, Navigation]}
-          slidesPerView={3}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            600: {
-              slidesPerView: 2,
-            },
-            1000: {
-              slidesPerView: 3,
-            },
-          }}
-          navigation
-          grid={{
-            rows: 2,
-            fill: "row",
-          }}
-          className=" max-lg:w-screen "
-        >
-          {appList.map((p) => {
-            return (
-              <SwiperSlide key={p.name} className="max-lg:px-5 mt-10 md:ml-20 ">
-                <Card className="p-5  ">
-                  <CardHeader className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
-                    <Image
-                      className="scale-1 hover:scale-[1.1] duration-300 object-contain"
-                      src={p.path}
-                      alt=""
-                      height={200}
-                      width={300}
-                    />
-                  </CardHeader>
-                  <CardTitle className="text-center p-3 hover:underline cursor-pointer">
-                    <Link href={p.url} target="_blank">
-                      {p.name}
-                    </Link>
-                  </CardTitle>
-                  {/* <CardDescription>{p.description}</CardDescription> */}
-                </Card>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+    <div className=" max-w-5xl">
+      <div className=" grid xl:grid-cols-3 md:grid-cols-2 gap-5 grid-cols-1 py-10 ">
+        {appList.map((p) => {
+          return (
+            <Link href={p.url} key={p.name} className="group">
+              <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
+                <div className="h-[250px] max-lg:h-[300px] max-md:h-[250px] cursor-pointer overflow-hidden">
+                  <Image
+                    className="scale-1 group-hover:scale-[1.1] duration-300 object-contain"
+                    src={p.path}
+                    alt=""
+                    height={200}
+                    width={300}
+                  />
+                </div>
+                <div className="text-center p-3 group-hover:underline cursor-pointer">
+                  <p className="text-xl font-bold">{p.name}</p>
+                </div>
+              </BackgroundGradient>
+            </Link>
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }
